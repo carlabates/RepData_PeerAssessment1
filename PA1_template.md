@@ -18,7 +18,7 @@ The six sections below correspond to the six sections of the assignment.
 
 The data was provided as part of the assignment.  I downloaded it and saved it to my working directory. I then prepared the R environment by loading the packages I would need for the assignment and reading the data into a data frame named x.  I needed to set the classes of the variables because 1) the date variable will be easier to convert from type character rather than the default type of factor and 2) questions in the assignment require the interval variable to act as a categorical variable which is facilitated by typing it as character.
 
-Note:  In order to avoid reults returned as scientific notation, I set options to round to two decimal places.
+Note:  In order to avoid results returned as scientific notation, I set options to round to two decimal places.
 
 
 
@@ -40,7 +40,7 @@ options(scipen = 1, digits = 2)
 
 ## What is mean total number of steps taken per day? 
 
-The code below depends on the dplyr package to create a dataset capturing the total number of steps taken per day over the two month period.  The histogram then cuts the data to display how manys days the stotal steps taken falls into the range of total steps.  For 5 days, the individual ranged under 5000 steps, while the individual had almost 30 days of between 10 and 15 thousand steps. 
+The code below depends on the dplyr package to create a data set capturing the total number of steps taken per day over the two month period.  The histogram then cuts the data to display how many days the total steps taken falls into the range of total steps.  For 5 days, the individual ranged under 5000 steps, while the individual had almost 30 days of between 10 and 15 thousand steps. 
 
 Cleansteps is the data frame without missing values.  
 
@@ -103,7 +103,7 @@ maxsteps <- c(themax$meansteps)
 maxinterval <- c(themax$interval)
 ```
 
-The maximum average number of steps was 206.17 which occured during interval 835.
+The maximum average number of steps was 206.17 which occurred during interval 835.
 
 ---
 
@@ -148,7 +148,7 @@ hist(stepsplus$totalsteps,
 moresteps <- c(mean(stepsplus$totalsteps), median(stepsplus$totalsteps))
 ```
 
-After imputing missing values, the mean is 10766.19 and the median is 10766.19 The mean and median do not change from the mean and median found from the data set without the imputed values.  The impact of adding the imputed values just seemed to amplify those days when total steps feel into the median quintile, the days when the individual took 10 to 15 thousand steps.
+After imputing missing values, the mean is 10766.19 and the median is 10766.19 The mean and median do not change from the mean and median found from the data set without the imputed values.  The impact of adding the imputed values just seemed to amplify those days when total steps feel into the median range, the days when the individual took 10 to 15 thousand steps.
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
